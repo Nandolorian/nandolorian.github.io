@@ -11,9 +11,9 @@
     <meta name="keywords" content="seguridad ciberseguridad information security cybersecurity" />
     <meta name="author" content="Caileo" />
     <link rel="stylesheet" href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" />
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700" rel="stylesheet" />
   </head>
-  <body class="leading-normal tracking-normal text-white" style="font-family: 'Source Sans Pro', sans-serif;">
+  <body class="leading-normal tracking-normal text-white">
     <!--Nav-->
     <nav id="header" class="bg-white fixed w-full z-30 top-0 text-white">
       <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
@@ -29,13 +29,14 @@
           <button id="nav-toggle" class="flex items-center p-1 text-pink-800 hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
             <svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
               <title>Menu</title>
+              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
             </svg>
           </button>
         </div>
         <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 bg-white lg:bg-transparent text-black p-4 lg:p-0 z-20" id="nav-content">
           <ul class="list-reset lg:flex justify-end flex-1 items-center">
             <li class="mr-3">
-              <a class="inline-block text-xl text-black no-underline hover:text-red-600 hover:text-underline py-2 px-4" href="#">Nosotros</a>
+              <a class="inline-block text-xl text-black no-underline hover:text-red-600 hover:text-underline py-2 px-4" href="#">Home</a>
             </li>
             <li class="mr-3">
               <a class="inline-block text-xl text-black no-underline hover:text-red-600 hover:text-underline py-2 px-4" href="#two">Enfoque</a>
@@ -134,11 +135,11 @@
 			        <img src="goals.png" />
           </div>
         </div>
-        <div class="flex flex-wrap flex-col-reverse sm:flex-row">
-          <div class="w-full sm:w-1/2 p-4 mt-6">
+        <div class="flex flex-wrap">
+          <div class="w-full sm:w-1/2 p-6">
 			        <img src="team.png" />
           </div>
-          <div class="w-full sm:w-1/2 p-6 mt-6">
+          <div class="w-full sm:w-1/2 p- mt-6">
             <div class="align-middle">
               <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">
                 Trabajamos con su equipo
@@ -282,16 +283,16 @@
       <div class="container mx-auto px-8">
         <div class="justify-center w-full bg-black flex flex-row md:flex-row py-6">
           <div class="w-1/4 flex-none bg-black">
-			<img class="w-1/2" src="caileof.png" />
-			<p class="text-s opacity-75 px-1">Seguridad sin obstáculos</p> 
+			<img class="w-1/2 sm:w-1/4" src="caileof.png" />
+			<p class="text-s opacity-75 px-1 sm:text-xs">Seguridad sin obstáculos</p> 
           </div>
 		  <div class="w-1/2 flex justify-center bg-black">
-			<a class="opacity-60 p-2">Disclaimer</a>
-            <a class="opacity-60 p-2">Privacy Policy</a>
-            <a class="opacity-60 p-2">Terms of Service</a>
+			      <a class="opacity-60 p-2 sm:text-xs">Disclaimer</a>
+            <a class="opacity-60 p-2 sm:text-xs">Privacy Policy</a>
+            <a class="opacity-60 p-2 sm:text-xs">Terms of Service</a>
           </div>
 		  <div class="w-1/4 flex bg-black">
-			<p class="opacity-60 pt-2">© 2021 Caileo</p>
+			<p class="opacity-75 pt-2 sm:text-xs">© 2021 Caileo</p>
           </div>
         </div>
       </div>
