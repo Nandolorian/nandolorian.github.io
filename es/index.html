@@ -1,328 +1,608 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="./images/favicon.ico?">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
-    <script defer src="app.js"></script>
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src=" ../src/js/head.js"></script>
     <title>Caileo</title>
 </head>
-<body>
-    <div class="preloader">
-        <span class="preloader__circle"></span>
-        <span class="preloader__circle preloader__circle--two"></span>
-    </div>
 
-    <a href="#" class="go-top" aria-label="Go back to top"><i class="fa-solid fa-chevron-up"></i></a>
-    
-    <nav>
-        <a href="#" class="nav__logo">
-            <img src="./images/white-logo.svg" width="220px" alt="Logo | Caileo" class="nav__logo-white">
-            <img src="./images/logo.svg" width="220px" alt="Logo | Caileo" class="nav__logo-orange">
-        </a>
-        <ul class="nav__links">
-            <li><a href="#header" class="header-link">Home</a></li>
-            <li><a href="#overview" class="header-link">Visión</a></li>
-            <li><a href="#services" class="header-link">Servicios</a></li>
-            <li><a href="#pricing" class="header-link">Precios</a></li>
-            <li><a href="#faq" class="header-link">FAQ</a></li>
-        </ul>
-        <div class="nav__menu">
-            <div class="hamburger"></div>
+<body>
+    <!-- NAVBAR -->
+    <nav class="sticky top-0 bg-white dark:bg-gray-900 w-full border-b border-gray-200 dark:border-gray-600">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="#home" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <img src="../src/images/logo/logo-light.svg" class="block dark:hidden w-32 h-auto" alt="Caileo Logo">
+                <img src="../src/images/logo/logo-dark.svg" class="hidden dark:block w-32 h-auto" alt="Caileo Logo">
+            </a>
+            <div class="flex md:order-2 space-x-3 md:space-x-1 rtl:space-x-reverse">
+                <button type="button"
+                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    <a href="#contact">Contacto</a>
+                </button>
+                <button id="theme-toggle" type="button"
+                    class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+                    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                    </svg>
+                    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                            fill-rule="evenodd" clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+                <button data-collapse-toggle="navbar-sticky" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                    aria-controls="navbar-sticky" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+                <ul
+                    class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                    <li>
+                        <a href="#home"
+                            class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                            Inicio
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#about"
+                            class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                            Visión
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#services"
+                            class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                            Servicios
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#prices"
+                            class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                            Precios
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#faq"
+                            class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                            FAQ
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <a href="#contact" class="nav__cta">Contacto</a>
     </nav>
 
-    <header id="header" class="nav-section">
-        <section class="header__text">
-            <h1 class="fadeFromLeft">Entienda a qué está expuesto</h1>
-        </br>
-            <h2 class="fadeFromLeft">Solucione lo que realmente importa.</h2>
-        </section>
-        <div class="header__img">
-            <img src="./images/front1.png" alt="Computer security" class="fadeFromRight">
+    <!-- HOME -->
+    <section id="home" class="bg-white dark:bg-gray-900">
+        <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
+            <h1
+                class="mb-4 mt-10 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+                Solucione lo que
+                <span class="text-blue-700 dark:text-blue-500">realmente importa.</span>
+            </h1>
+            <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
+                La seguridad consiste en tomar decisiones inteligentes, no en perseguir todas las vulnerabilidades
+                posibles.
+            </p>
         </div>
-    </header>
+    </section>
 
-    <div class="overview nav-section" id="overview">
-        <div class="overview-flex fadeFromTop">
-            <section class="overview-flex__text">
-                <h2>Enfoque personalizado</h2>
-                <p>Entendemos que cada empresa es única. Por eso adaptamos nuestros penetration tests para satisfacer las necesidades específicas de su organización. Tanto si se trata de una pequeña empresa como de una corporación multinacional, ofrecemos soluciones personalizadas.</p>
-                <p>Contamos con un equipo de expertos en ciberseguridad altamente capacitados y certificados. Cada uno de nuestros profesionales tiene una amplia experiencia en penetration test y se dedica a mantener su información segura.</p>
-            </section>
-            <div class="overview-flex__img">
-                <img src="./images/options.png" alt="Personalized Approach">
-            </div>
-        </div>
-    </div>
-
-    <div class="features nav-section" id="services">
-        <section class="features__text">
-            <h3 class="fadeFromTop">Servicios</h3>
-            <h2 class="fadeFromTop">Podemos ayudar.</h2>
-            <p class="fadeFromTop">Acceda a todas las funcionalidades necesarias para detectar las vulnerabilidades de seguridad y abordarlas con rapidez, logrando resultados eficaces.</p>
-        </section>
-        <div class="features__grid">
-            <section class="feature fadeFromTop">
-                <div class="feature__icon">
-                    <i class="fa-solid fa-globe"></i>
-                </div>
-                <h3>Seguridad Web</h3>
-                <p>Proteja sus datos, su privacidad y su tranquilidad. No permita que las vulnerabilidades comprometan su presencia en línea.</p>
-            </section>
-            <section class="feature fadeFromTop">
-                <div class="feature__icon">
-                    <i class="fa-solid fa-server"></i>
-                </div>
-                <h3>Seguridad de red</h3>
-                <p>Proteja sus datos y comunicaciones de posibles amenazas. Garantice una sólida defensa frente a los ciberriesgos.</p>
-            </section>
-            <section class="feature fadeFromTop">
-                <div class="feature__icon">
-                    <i class="fa-solid fa-gear"></i>
-                </div>
-                <h3>Seguridad de API</h3>
-                <p>Proteja sus datos y conexiones frente a posibles amenazas. Garantice un intercambio de información fluido y protegido.</p>
-            </section>
-            <section class="feature fadeFromTop">
-                <div class="feature__icon">
-                    <i class="fa-solid fa-cloud"></i>
-                </div>
-                <h3>Seguridad en la nube</h3>
-                <p>Proteja sus datos y aplicaciones en la nube frente a posibles riesgos. Garantice una defensa resistente frente a las ciberamenazas.</p>
-            </section>
-            <section class="feature fadeFromTop">
-                <div class="feature__icon">
-                    <i class="fa-solid fa-rotate"></i>
-                </div>
-                <h3>SDLC Seguro</h3>
-                <p>Genere confianza en su ciclo de vida de desarrollo de software, integre medidas de seguridad sólidas desde el inicio hasta la puesta en producción.</p>
-            </section>
-            <section class="feature fadeFromTop">
-                <div class="feature__icon">
-                    <i class="fa-solid fa-virus"></i>
-                </div>
-                <h3>Ransomware</h3>
-                <p>Defienda sus activos digitales contra ataques de ransomware, proteja sus datos y sistemas de intentos maliciosos de cifrado.</p>
-            </section>
-        </div>
-    </div>
-
-    <div class="clients">
-        <div class="swiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="./images/ceh.png" alt="ceh"></div>
-                <div class="swiper-slide"><img src="./images/27001.png" alt="27001"></div>
-                <div class="swiper-slide"><img src="./images/27032.png" alt="27032"></div>
-                <div class="swiper-slide"><img src="./images/ceh.png" alt="ceh"></div>
-                <div class="swiper-slide"><img src="./images/27001.png" alt="27001"></div>
-                <div class="swiper-slide"><img src="./images/27032.png" alt="27032"></div>
-            </div>
-        </div>
-    </div>
-
-    <div class="pricing nav-section" id="pricing">
-        <section class="pricing__text">
-            <h3 class="fadeFromTop">Precios</h3>
-            <h2 class="fadeFromTop">Precios de los servicios</h2>
-            <p class="fadeFromTop">Nuestros servicios de seguridad responden a necesidades tanto a corto como a largo plazo. Tanto si necesita un penetration test anual como un ejercicio continuo de red team.</p>
-        </section>
-        <div class="pricing__grid">
-            <div class="price-menu fadeFromTop">
-                <h4 class="price-menu__type">Vulnerability Scanning</h4>
-                <p>Un informe básico para conocer la postura de seguridad y decidir los siguientes pasos.</p>
-                <div class="price-menu__price">
-                    <br>
-                    <h2>Gratis</h2>
-                </div>
-                <div class="price-menu__btn-a"><a href="#contact">Contacto</a></div>
-                <hr>
-                <h4 class="price-menu__included">Características</h4>
-                <ul class="price-menu__list">
-                    <li><i class="fa-regular fa-circle-check"></i><span>Sin compromiso</span></li>
-                    <li><i class="fa-regular fa-circle-check"></i><span>Un objetivo externo</span></li>
-                    <li><i class="fa-regular fa-circle-check"></i><span>Por única vez</span></li>
-                    <li><i class="fa-regular fa-circle-check"></i><span>No se evalúa el riesgo para la seguridad</span></li>
-                    <li><i class="fa-regular fa-circle-check"></i><span>No se responde a ninguna pregunta sobre el informe</span></li>
-                </ul>
-            </div>
-            <div class="price-menu fadeFromTop">
-                <h4 class="price-menu__type">Vulnerability Assessment</h4>
-                <p>Esta exploración aborda principalmente las vulnerabilidades dentro de la capa del sistema operativo y el software de uso común.</p>
-                <div class="price-menu__price">
-                    <div>A partir de</div>
-                    <h2>$200</h2>
-                </div>
-                <div class="price-menu__btn-a"><a href="#contact">Contacto</a></div>
-                <hr>
-                <h4 class="price-menu__included">Características</h4>
-                <ul class="price-menu__list">
-                    <li><i class="fa-regular fa-circle-check"></i><span>Sin compromiso</span></li>
-                    <li><i class="fa-regular fa-circle-check"></i><span>Un objetivo externo</span></li>
-                    <li><i class="fa-regular fa-circle-check"></i><span>Evaluación del riesgo alineada con el negocio</span></li>
-                    <li><i class="fa-regular fa-circle-check"></i><span>Herramientas Opensource y comerciales</span></li>
-                </ul>
-            </div>
-            <div class="price-menu fadeFromTop">
-                <h4 class="price-menu__type">Penetration Test</h4>
-                <p>
-                    Una prueba de penetración emula las herramientas y métodos de los posibles atacantes para descubrir y explotar vulnerabilidades.</p>
-                <div class="price-menu__price">
-                    <div>A partir de</div>
-                    <h2>$500</h2>
-                </div>
-                <div class="price-menu__btn-a"><a href="#contact">Contacto</a></div>
-                <hr>
-                <h4 class="price-menu__included">Características</h4>
-                <ul class="price-menu__list">
-                    <li><i class="fa-regular fa-circle-check"></i><span>Compromiso mínimo de 10 horas</span></li>
-                    <li><i class="fa-regular fa-circle-check"></i><span>Blackbox/Greybox/Whitebox</span></li>
-                    <li><i class="fa-regular fa-circle-check"></i><span>Herramientas Opensource y comerciales</span></li>
-                    <li><i class="fa-regular fa-circle-check"></i><span>Un retest</span></li>
-                    <li><i class="fa-regular fa-circle-check"></i><span>Obtenga información práctica sobre las vulnerabilidades descubiertas</span></li>
-                </ul>
-            </div>
-            <div class="price-menu fadeFromTop">
-                <h4 class="price-menu__type">Red Team</h4>
-                <p>Simulación de un ataque real para medir la capacidad de la organización para resistir las ciberamenazas actuales.</p>
-                <div class="price-menu__price">
-                    <div>A partir de</div>
-                    <h2>$5000</h2>
-                </div>
-                <div class="price-menu__btn-a"><a href="#contact">Contacto</a></div>
-                <hr>
-                <h4 class="price-menu__included">Características</h4>
-                <ul class="price-menu__list">
-                    <li><i class="fa-regular fa-circle-check"></i><span>Compromiso mínimo de 3 meses</span></li>
-                    <li><i class="fa-regular fa-circle-check"></i><span>Objetivos externos</span></li>
-                    <li><i class="fa-regular fa-circle-check"></i><span>Reunión de una hora por mes para discutir los hallazgos</span></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <div class="faq" id="faq">
-        <section class="faq__text">
-            <h3 class="fadeFromTop">FAQ</h3>
-            <h2 class="fadeFromTop">Frequently Asked Questions</h2>
-        </section>
-        <div class="faq__accordion">
-            <details>
-                <summary>
-                    <div class="question">
-                        <div class="question__count">01</div>
-                        <p>¿Por qué realizan un Vulnerability Scanning de forma gratuita?</p>
-                    </div>
-                    <i class="fa-solid fa-plus"></i>
-                    <i class="fa-solid fa-minus"></i>
-                </summary>
-                <p class="answer">
-                    Muchos clientes nos han mostrado erróneamente informes de Vulnerability Scanning, pensando que habían realizado un Penetration Test. Estos escaneos automatizados requieren poco esfuerzo por parte de los proveedores y no aportan realmente valor, es por eso que los ofrecemos sin coste alguno.
-                    Además, algunos clientes dudan de hacer un Penetration Test por cuestiones de coste. A menudo juzgan el valor basándose en el número de vulnerabilidades encontradas. Sin embargo, una exploración de vulnerabilidades gratuita puede ser un punto de partida para determinar si es necesario un Penetration Test más exhaustivo.
+    <!-- ABOUT -->
+    <section id="about" class="bg-white dark:bg-gray-900">
+        <div class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
+            <div class="font-light text-gray-500 sm:text-lg dark:text-gray-400">
+                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+                    Enfoque personalizado
+                </h2>
+                <p class="mb-4">
+                    Al centrarse en las amenazas que plantean riesgos reales para su empresa y sus datos,
+                    usted protege lo que más importa al tiempo que utiliza los recursos de forma eficiente.
+                    Nuestro enfoque da prioridad a solucionar los problemas de seguridad de alto impacto,
+                    es decir, aquellos que podrían perjudicar realmente sus operaciones o poner en peligro
+                    información confidencial. En lugar de perderse en una lista interminable de vulnerabilidades
+                    teóricas, le ayudamos a identificar y corregir las brechas de seguridad que representan un
+                    riesgo real. Esta estrategia específica garantiza que sus esfuerzos de seguridad aporten el
+                    máximo valor y que su equipo se centre en las amenazas que podrían afectar realmente a su
+                    organización.
                 </p>
-            </details>
-            <details>
-                <summary>
-                    <div class="question">
-                        <div class="question__count">02</div>
-                        <p>¿Qué incluye el Vulnerability Assessment de aplicaciones web?</p>
-                    </div>
-                    <i class="fa-solid fa-plus"></i>
-                    <i class="fa-solid fa-minus"></i>
-                </summary>
-                <p class="answer">
-                    El Vulnerability Assessment de las aplicaciones web se centra en la evaluación de las funcionalidades de la aplicación, con un enfoque principal en la identificación y tratamiento de las vulnerabilidades en la capa de aplicación. Este proceso se ocupa especialmente de mitigar los riesgos asociados a los diez principales riesgos de seguridad de las aplicaciones web de OWASP.</p>
-            </details>
-            <details>
-                <summary>
-                    <div class="question">
-                        <div class="question__count">03</div>
-                        <p>¿Cuáles son los distintos tipos de Penetration Test?</p>
-                    </div>
-                    <i class="fa-solid fa-plus"></i>
-                    <i class="fa-solid fa-minus"></i>
-                </summary>
-                <p class="answer">
-                    La mejor forma de probar la seguridad de tu sistema depende de lo que estés intentando averiguar. Puedes simular:<br><br>
-                    <b>Ataques externos:</b> Esta prueba de "caja negra" no utiliza ningún inicio de sesión, por lo que no detectará puntos débiles que requieran acceso.<br>
-                    <b>Ataques internos:</b> Esta prueba de "caja gris" utiliza inicios de sesión, lo que permite encontrar vulnerabilidades tanto externas como internas.<br>
-                    <b>Acceso completo:</b>Esta prueba de "caja blanca" combina una prueba normal con una revisión del código, en busca de fallos profundos.<br>
-                </p>
-            </details>
-            <details>
-                <summary>
-                    <div class="question">
-                        <div class="question__count">04</div>
-                        <p>¿Qué incluye el reporte de Penetration Test?</p>
-                    </div>
-                    <i class="fa-solid fa-plus"></i>
-                    <i class="fa-solid fa-minus"></i>
-                </summary>
-                <p class="answer">
-                    Ofrecemos un informe completo y de alta calidad, garantizando la precisión al minimizar los falsos positivos. Esto es lo que puede esperar:<br>
-                    <b>Visión general clara:</b> Comenzaremos con un resumen conciso de todo el proceso.<br>
-                    <b>Alcance transparente:</b> Definiremos explícitamente lo que se probó.<br>
-                    <b>Descubrimientos priorizados:</b> Una lista clara de vulnerabilidades, clasificadas por importancia.<br>
-                    <b>Análisis en profundidad:</b> Explicaremos el impacto potencial de cada vulnerabilidad y cómo solucionarla.<br>
-                    <b>Alertas de problemas críticos:</b> Le notificaremos inmediatamente de cualquier vulnerabilidad potencialmente devastadora, lo que permitirá una pronta solución.<br>
-                    En resumen, nuestros informes le proporcionan los conocimientos y la orientación necesarios para abordar eficazmente los riesgos de seguridad.
-                </p>
-            </details>
+            </div>
+            <div class="grid grid-cols-2 gap-4 mt-8">
+                <img class="w-full rounded-xl shadow-lg shadow-blue-500/50 dark:shadow-sm-light"
+                    src="../src/images/about/personal.png" alt="Personalized Approach">
+                <img class="mt-4 w-full lg:mt-10 rounded-xl shadow-lg shadow-blue-500/50 dark:shadow-sm-light"
+                    src="../src/images/about/alert.png" alt="Alert">
+            </div>
         </div>
-    </div>
-    
-    <div class="support" id="contact">
-        <div class="support__text">
-            <h2>¿Quiere trabajar con nosotros?<br>Envíenos un mensaje</h2>
-            <p>Envíenos sus preguntas para iniciar un nuevo proyecto.</p>
-            <div><br><br><br><br><br></div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="bg-white dark:bg-gray-900">
+        <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+            <div class="max-w-screen-md mb-8 lg:mb-16">
+                <h2 class="mb-4 mt-8 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+                    Podemos ayudar
+                </h2>
+                <p class="text-gray-500 sm:text-xl dark:text-gray-400">
+                    Acceda a todas las funciones necesarias para detectar las vulnerabilidades de seguridad y abordarlas
+                    con rapidez, logrando resultados eficaces.
+                </p>
+            </div>
+            <div class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
+                <div>
+                    <div
+                        class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-blue-500 lg:h-12 lg:w-12 dark:bg-blue-600">
+                        <i class="fa-solid fa-globe text-white fa-lg"></i>
+                    </div>
+                    <h3 class="mb-2 text-xl font-bold dark:text-white">Seguridad Web</h3>
+                    <p class="text-gray-500 dark:text-gray-400">
+                        Proteja sus datos, su privacidad y su tranquilidad. No permita que las vulnerabilidades
+                        comprometan su presencia en línea.
+                    </p>
+                </div>
+
+                <div>
+                    <div
+                        class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-blue-500 lg:h-12 lg:w-12 dark:bg-blue-600">
+                        <i class="fa-solid fa-server text-white fa-lg"></i>
+                    </div>
+                    <h3 class="mb-2 text-xl font-bold dark:text-white">Seguridad de redes</h3>
+                    <p class="text-gray-500 dark:text-gray-400">
+                        Proteja sus datos y comunicaciones de posibles amenazas. Garantice una sólida defensa frente a
+                        los ciberriesgos.
+                    </p>
+                </div>
+
+                <div>
+                    <div
+                        class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-blue-500 lg:h-12 lg:w-12 dark:bg-blue-600">
+                        <i class="fa-solid fa-gear text-white fa-lg"></i>
+                    </div>
+                    <h3 class="mb-2 text-xl font-bold dark:text-white">Seguridad en API</h3>
+                    <p class="text-gray-500 dark:text-gray-400">
+                        Proteja sus datos y conexiones frente a posibles amenazas. Garantice un intercambio de
+                        información fluido y protegido.
+                    </p>
+                </div>
+
+                <div>
+                    <div
+                        class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-blue-500 lg:h-12 lg:w-12 dark:bg-blue-600">
+                        <i class="fa-solid fa-cloud text-white fa-lg"></i>
+                    </div>
+                    <h3 class="mb-2 text-xl font-bold dark:text-white">Seguridad en la Nube</h3>
+                    <p class="text-gray-500 dark:text-gray-400">
+                        Proteja sus datos y aplicaciones en la nube frente a posibles riesgos. Garantice una defensa
+                        resistente frente a las ciberamenazas.
+                    </p>
+                </div>
+
+                <div>
+                    <div
+                        class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-blue-500 lg:h-12 lg:w-12 dark:bg-blue-600">
+                        <i class="fa-solid fa-rotate text-white fa-lg"></i>
+                    </div>
+                    <h3 class="mb-2 text-xl font-bold dark:text-white">SDLC seguro</h3>
+                    <p class="text-gray-500 dark:text-gray-400">
+                        Genere confianza en su ciclo de vida de desarrollo de software, integre medidas de seguridad
+                        sólidas desde el inicio hasta la implantación.
+                    </p>
+                </div>
+
+                <div>
+                    <div
+                        class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-blue-500 lg:h-12 lg:w-12 dark:bg-blue-600">
+                        <i class="fa-solid fa-virus text-white fa-lg"></i>
+                    </div>
+                    <h3 class="mb-2 text-xl font-bold dark:text-white">Ransomware</h3>
+                    <p class="text-gray-500 dark:text-gray-400">
+                        Defienda sus activos digitales contra ataques de ransomware proteja sus datos y sistemas de
+                        intentos maliciosos de cifrado.
+                    </p>
+                </div>
+            </div>
         </div>
-        <div class="support__form-container">
-            <form method="POST" action="https://formsubmit.co/web@caileo.com">
-                <input type="text" name="name" placeholder="Nombre Completo">
-                <input type="text" name="enterprise" placeholder="Nombre Empresa">
-                <input type="email" name="email" placeholder="Email Corporativo">
-                <input type="number" name="phone" placeholder="Teléfono">
-                <textarea type="textarea" name="message" placeholder="Mensaje"></textarea>
-                <input type="hidden" name="_subject" value="Pedido de información">
-                <input type="hidden" name="_next" value="https://caileo.com/es">
-                <button type="submit">Enviar</button>
+    </section>
+
+    <!-- PRICES -->
+    <section id="prices" class="bg-white dark:bg-gray-900">
+        <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+            <div class="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
+                <h2 class="mb-4 mt-8 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+                    Precios de los servicios
+                </h2>
+                <p class="mb-5 font-light text-gray-500 sm:text-xl dark:text-gray-400">
+                    Nuestros servicios de seguridad responden a necesidades tanto a corto como a largo plazo. Tanto si
+                    necesita una prueba de penetración anual como un ejercicio continuo de equipo rojo.
+                </p>
+            </div>
+            <div class="lg:grid lg:grid-cols-4 sm:gap-6 xl:gap-10 lg:space-y-0">
+                <!-- Pricing Card -->
+                <div
+                    class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                    <h3 class="mb-4 text-2xl font-semibold">Análisis de vulnerabilidades</h3>
+                    <p class="lg:text-sm font-light text-gray-500 sm:text-lg dark:text-gray-400">
+                        Un informe básico para conocer la postura de seguridad y decidir los siguientes pasos.
+                    </p>
+                    <div class="flex justify-center items-baseline my-8">
+                        <span class="mr-2 text-5xl font-extrabold">Gratis</span>
+                    </div>
+                    <!-- List -->
+                    <ul role="list" class="mb-8 space-y-4 text-left">
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-check text-green-400"></i>
+                            <span>Única vez</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-check text-green-400"></i>
+                            <span>Un objetivo externo</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-check text-green-400"></i>
+                            <span>Sin evaluación del riesgo para la seguridad</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-check text-green-400"></i>
+                            <span>No se responde a ninguna pregunta sobre el informe</span>
+                        </li>
+                    </ul>
+                    <a href="#contact"
+                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Start</a>
+                </div>
+                <!-- Pricing Card -->
+                <div
+                    class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                    <h3 class="mb-4 text-2xl font-semibold">Evaluación de vulnerabilidades</h3>
+                    <p class="lg:text-sm font-light text-gray-500 sm:text-lg dark:text-gray-400">
+                        Esta exploración aborda principalmente las vulnerabilidades dentro de la capa del sistema
+                        operativo y el software de uso común.
+                    </p>
+                    <div class="flex justify-center items-baseline my-8">
+                        <span class="mr-2 text-5xl font-extrabold">$ 200</span>
+                    </div>
+                    <!-- List -->
+                    <ul role="list" class="mb-8 space-y-4 text-left">
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-check text-green-400"></i>
+                            <span>Sin compromiso</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-check text-green-400"></i>
+                            <span>Un objetivo externo</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-check text-green-400"></i>
+                            <span>Evaluación de riesgos para una seguridad adaptada a la empresa</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-check text-green-400"></i>
+                            <span>Herramientas comerciales y de código abierto</span>
+                        </li>
+                    </ul>
+                    <a href="#contact"
+                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Start</a>
+                </div>
+                <!-- Pricing Card -->
+                <div
+                    class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                    <h3 class="mb-4 text-2xl font-semibold">Penetration Test</h3>
+                    <p class="lg:text-sm font-light text-gray-500 sm:text-lg dark:text-gray-400">
+                        Una prueba de penetración emula las herramientas y métodos de los posibles atacantes para
+                        descubrir y explotar vulnerabilidades.
+                    </p>
+                    <div class="flex justify-center items-baseline my-8">
+                        <span class="mr-2 text-5xl font-extrabold">$ 500</span>
+                    </div>
+                    <!-- List -->
+                    <ul role="list" class="mb-8 space-y-4 text-left">
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-check text-green-400"></i>
+                            <span>Compromiso mínimo de 10 horas</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-check text-green-400"></i>
+                            <span>Blackbox/Greybox/Whitebox</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-check text-green-400"></i>
+                            <span>Un retest</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-check text-green-400"></i>
+                            <span>Herramientas comerciales y pruebas manuales</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-check text-green-400"></i>
+                            <span>Obtenga información práctica sobre las vulnerabilidades descubiertas</span>
+                        </li>
+                    </ul>
+                    <a href="#contact"
+                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Start</a>
+                </div>
+                <!-- Pricing Card -->
+                <div
+                    class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                    <h3 class="mb-4 text-2xl font-semibold">Red Team</h3>
+                    <p class="lg:text-sm font-light text-gray-500 sm:text-lg dark:text-gray-400">Simulación de un ataque
+                        real para medir la capacidad de la organización para resistir las ciberamenazas actuales.</p>
+                    <div class="flex justify-center items-baseline my-8">
+                        <span class="mr-2 text-5xl font-extrabold">$ 5000</span>
+                    </div>
+                    <!-- List -->
+                    <ul role="list" class="mb-8 space-y-4 text-left">
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-check text-green-400"></i>
+                            <span>Compromiso mínimo de 3 meses</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-check text-green-400"></i>
+                            <span>Objetivos externos</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-check text-green-400"></i>
+                            <span>Reunión de una hora al mes para debatir los resultados</span>
+                        </li>
+                    </ul>
+                    <a href="#contact"
+                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Start</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="bg-white dark:bg-gray-900">
+        <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+            <div class="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
+                <h2 class="mb-4 mt-8 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+                    Frequently Asked Questions
+                </h2>
+            </div>
+            <div id="accordion-collapse" data-accordion="collapse">
+                <h2 id="accordion-collapse-heading-1">
+                    <button type="button"
+                        class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
+                        data-accordion-target="#accordion-collapse-body-1" aria-expanded="true"
+                        aria-controls="accordion-collapse-body-1">
+                        <span>¿Por qué realizan una exploración de vulnerabilidades gratuita?</span>
+                        <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 5 5 1 1 5" />
+                        </svg>
+                    </button>
+                </h2>
+                <div id="accordion-collapse-body-1" class="hidden" aria-labelledby="accordion-collapse-heading-1">
+                    <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
+                        <p class="mb-2 text-gray-500 dark:text-gray-400">Muchos clientes nos han mostrado erróneamente
+                            informes
+                            de escaneos de vulnerabilidades, pensando que se habían sometido a pruebas de penetración.
+                            Estos análisis
+                            automatizados requieren poco esfuerzo por parte de los proveedores, y los ofrecemos sin
+                            coste alguno. Además, algunos
+                            clientes dudan de las pruebas de penetración por cuestiones de coste. A menudo juzgan el
+                            valor basándose en el número de vulnerabilidades encontradas. Sin embargo, una exploración
+                            de vulnerabilidades gratuita puede
+                            ser un punto de partida para determinar si es necesaria una prueba de penetración más
+                            exhaustiva.</p>
+                    </div>
+                </div>
+                <h2 id="accordion-collapse-heading-2">
+                    <button type="button"
+                        class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
+                        data-accordion-target="#accordion-collapse-body-2" aria-expanded="false"
+                        aria-controls="accordion-collapse-body-2">
+                        <span>¿Qué incluye la evaluación de vulnerabilidades de aplicaciones web?</span>
+                        <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 5 5 1 1 5" />
+                        </svg>
+                    </button>
+                </h2>
+                <div id="accordion-collapse-body-2" class="hidden" aria-labelledby="accordion-collapse-heading-2">
+                    <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700">
+                        <p class="mb-2 text-gray-500 dark:text-gray-400">La evaluación de las vulnerabilidades
+                            se centra en la evaluación de las funcionalidades de la aplicación, con un enfoque
+                            enfoque principal en identificar y abordar las vulnerabilidades en la capa de aplicación.
+                            Este proceso
+                            proceso está particularmente preocupado por mitigar los riesgos asociados con los Diez
+                            Principales Riesgos de Seguridad de Aplicaciones Web de OWASP.
+                            Riesgos de seguridad de las aplicaciones web.</p>
+                    </div>
+                </div>
+                <h2 id="accordion-collapse-heading-3">
+                    <button type="button"
+                        class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
+                        data-accordion-target="#accordion-collapse-body-3" aria-expanded="false"
+                        aria-controls="accordion-collapse-body-3">
+                        <span>¿Cuáles son los distintos tipos de pruebas de penetración?</span>
+                        <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 5 5 1 1 5" />
+                        </svg>
+                    </button>
+                </h2>
+                <div id="accordion-collapse-body-3" class="hidden" aria-labelledby="accordion-collapse-heading-3">
+                    <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
+                        <p class="mb-2 text-gray-500 dark:text-gray-400">La mejor manera de comprobar la seguridad de tu
+                            sistema
+                            depende de lo que estés tratando de encontrar. Podemos simular:</p>
+                        <ul class="ps-5 text-gray-500 list-disc dark:text-gray-400">
+                            <li><span class="text-blue-700 dark:text-blue-500">Hackers externos:</span> Esta prueba de
+                                «caja negra» no utiliza ningún inicio de sesión, por lo que no detectará puntos débiles
+                                que requieran acceso..</li>
+                            <li><span class="text-blue-700 dark:text-blue-500">Empleados malintencionadas:</span> Esta
+                                prueba de «caja gris» utiliza inicios de sesión, lo que permite encontrar
+                                vulnerabilidades tanto externas como internas.
+                            </li>
+                            <li><span class="text-blue-700 dark:text-blue-500">Acceso completo:</span> Esta prueba de
+                                «caja blanca» combina una prueba normal con una revisión del código, en busca de fallos
+                                profundos.</li>
+                        </ul>
+                    </div>
+                </div>
+                <h2 id="accordion-collapse-heading-4">
+                    <button type="button"
+                        class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
+                        data-accordion-target="#accordion-collapse-body-4" aria-expanded="false"
+                        aria-controls="accordion-collapse-body-4">
+                        <span>¿Qué incluye el informe de las pruebas de penetración?</span>
+                        <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 5 5 1 1 5" />
+                        </svg>
+                    </button>
+                </h2>
+                <div id="accordion-collapse-body-4" class="hidden" aria-labelledby="accordion-collapse-heading-4">
+                    <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
+                        <p class="mb-2 text-gray-500 dark:text-gray-400">Ofrecemos un informe de Pruebas de Penetración
+                            completo y de alta calidad, que garantiza la precisión minimizando los falsos positivos.
+                            Esto es lo que puede esperar:<br></p>
+                        <ul class="ps-5 text-gray-500 list-disc dark:text-gray-400">
+                            <li><span class="text-blue-700 dark:text-blue-500">Visión de conjunto:</span> Un resumen
+                                conciso de todo el proceso.</li>
+                            <li><span class="text-blue-700 dark:text-blue-500">Alcance transparente:</span> Definiremos
+                                explícitamente lo que se ha probado.<br></li>
+                            <li><span class="text-blue-700 dark:text-blue-500">Hallazgos prioritarios:</span> Una lista
+                                clara de vulnerabilidades, clasificadas por importancia.</li>
+                            <li><span class="text-blue-700 dark:text-blue-500">Análisis en profundidad:</span>
+                                Explicaremos el impacto potencial de cada vulnerabilidad y cómo solucionarla.</li>
+                            <li><span class="text-blue-700 dark:text-blue-500">Alertas de problemas críticos:</span> Le
+                                notificaremos inmediatamente cualquier vulnerabilidad potencialmente crítica, lo que
+                                le permitirá solucionarla rápidamente.</li>
+                        </ul>
+                        <p class="mb-2 text-gray-500 dark:text-gray-400">En resumen, nuestros informes accionables le
+                            proporcionan los conocimientos y la orientación necesarios para abordar eficazmente los
+                            riesgos de seguridad.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="bg-white dark:bg-gray-900">
+        <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
+            <h2 class="mb-4 mt-8 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">
+                ¿Quiere trabajar con nosotros?
+            </h2>
+            <p class="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">
+                Envíenos sus preguntas para iniciar un nuevo proyecto.
+            </p>
+            <form method="POST" action="https://formsubmit.co/web@caileo.com" class="space-y-8">
+                <div>
+                    <input type="text" name="name" id="name"
+                        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                        placeholder="Nombre" required>
+                </div>
+                <div>
+                    <input type="text" name="enterprise" id="enterprise"
+                        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                        placeholder="Nombre de la compañia" required>
+                </div>
+                <div>
+                    <input type="email" name="email" id="email"
+                        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                        placeholder="Correo empresarial" required>
+                </div>
+                <div class="sm:col-span-2">
+                    <textarea name="message" id="message" rows="6"
+                        class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                        placeholder="Mensaje"></textarea>
+                </div>
+                <div>
+                    <input type="hidden" name="_subject" value="Request Info">
+                    <input type="hidden" name="_next" value="https://caileo.com">
+                </div>
+                <button type="submit"
+                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    Enviar
+                </button>
             </form>
         </div>
-    </div>
+    </section>
 
-    <footer>
-        <div class="footer__top">
-            <div class="footer__intro">
-                <a href="#"><img src="./images/white-logo.svg" alt="Home | Caileo" class="footer__intro--logo"></a>
-                <p>Entienda a qué está expuesto.</p>
-                <p>Solucione lo que realmente importa.</p>
+    <!-- FOOTER -->
+    <footer class="p-4 bg-white sm:p-6 dark:bg-gray-800">
+        <div class="mx-auto max-w-screen-xl pt-3 pb-3">
+            <div class="md:flex md:justify-between">
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="flex items-center">
+                        <img src="../src/images/logo/logo-light.svg" class="block dark:hidden w-32 h-auto"
+                            alt="Drew Logo">
+                        <img src="../src/images/logo/logo-dark.svg" class="hidden dark:block w-32 h-auto"
+                            alt="Drew Logo">
+                    </a>
+                    <br>
+                    <span class="mx-2 text-sm text-gray-500 sm:text-center dark:text-gray-400">Entienda a qué está
+                        expuesto.</span>
+                    <br>
+                    <span class="mx-2 text-sm text-gray-500 sm:text-center dark:text-gray-400">Solucione lo que
+                        realmente importa.</span>
+                </div>
+                <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Compañía</h2>
+                        <ul class="text-gray-600 dark:text-gray-400">
+                            <li class="mb-4">
+                                <a href="#about" class="hover:underline">Visión</a>
+                            </li>
+                            <li>
+                                <a href="#services" class="hover:underline">Servicios</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Social</h2>
+                        <ul class="text-gray-600 dark:text-gray-400">
+                            <li>
+                                <a href="https://www.linkedin.com/company/caileo/" class="hover:underline">LinkedIn</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
+                        <ul class="text-gray-600 dark:text-gray-400">
+                            <li class="mb-4">
+                                <a href="/privacy.html" class="hover:underline">Política de privacidad</a>
+                            </li>
+                            <li>
+                                <a href="/terms.html" class="hover:underline">Términos y condiciones</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="footer__grids">
-                <section class="footer__grid">
-                    <h3>Compania</h3>
-                    <ul class="footer__grid--list">
-                        <li><a href="#overview">Visión</a></li>
-                        <li><a href="#services">Servicios</a></li>
-                    </ul>
-                </section>
-                <section class="footer__grid">
-                    <h3>Legales</h3>
-                    <ul class="footer__grid--list">
-                        <li><a href="#">Términos y condiciones</a></li>
-                        <li><a href="#">Política de privacidad</a></li>
-                    </ul>
-                </section>
-                <section class="footer__grid">
-                    <a href="#"><img src="./images/LI-Logo.png" alt="Home | Caileo" class="footer__intro--logo"></a>
-                </section>
+            <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+            <div class="sm:flex sm:items-center sm:justify-between">
+                <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2025 Caileo Todos los derechos
+                    reservados.
             </div>
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+    <script src="../src/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
 </body>
+
 </html>
